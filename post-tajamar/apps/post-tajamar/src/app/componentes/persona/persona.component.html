@@ -1,0 +1,106 @@
+<form [formGroup]="this.registerFormulario">
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeHolder="Introduzca su email">
+        <mat-error *ngIf="email.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-error *ngIf="email.errors?.email">No tiene el formato deseado: <strong>"email"</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Introduzca su contraseña</mat-label>
+        <input matInput #contrasenaInput formControlName="contrasena" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="contrasena.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-error *ngIf="contrasena.errors?.minlength && !contrasena.errors?.required">Este campo tiene una longitud
+            mínima - <strong>{{contrasenaInput.value.length}} / 10</strong></mat-error>
+        <mat-error
+            *ngIf="contrasena.errors?.upperCaseLetter && !contrasena.errors?.minlength && !contrasena.errors?.required">
+            La contraseña <strong>tiene</strong> que tener <strong>mayúsculas</strong></mat-error>
+        <mat-error
+            *ngIf="contrasena.errors?.lowerCaseLetter && !contrasena.errors?.upperCaseLetter && !contrasena.errors?.minlength && !contrasena.errors?.required">
+            La contraseña <strong>tiene</strong> que tener <strong>minúsculas</strong></mat-error>
+        <mat-error
+            *ngIf="contrasena.errors?.digit && !contrasena.errors?.lowerCaseLetter && !contrasena.errors?.upperCaseLetter && !contrasena.errors?.minlength && !contrasena.errors?.required">
+            La contraseña <strong>tiene</strong> que tener <strong>números</strong></mat-error>
+        <mat-error
+            *ngIf="contrasena.errors?.characters && !contrasena.errors?.digit && !contrasena.errors?.lowerCaseLetter && !contrasena.errors?.upperCaseLetter && !contrasena.errors?.minlength && !contrasena.errors?.required">
+            La contraseña <strong>tiene</strong> que tener <strong>caracteres especiales</strong></mat-error>
+        <mat-error
+            *ngIf="contrasena.errors?.notRepeatingThreeCharacters && !contrasena.errors?.characters && !contrasena.errors?.digit && !contrasena.errors?.lowerCaseLetter && !contrasena.errors?.upperCaseLetter && !contrasena.errors?.minlength && !contrasena.errors?.required">
+            La contraseña <strong>no puede</strong> tener <strong>3 caracteres seguidos iguales</strong></mat-error>
+        <mat-error
+            *ngIf="contrasena.errors?.onlyAboveCharClassesNoSpaces && !contrasena.errors?.notRepeatingThreeCharacters && !contrasena.errors?.characters && !contrasena.errors?.digit && !contrasena.errors?.lowerCaseLetter && !contrasena.errors?.upperCaseLetter && !contrasena.errors?.minlength && !contrasena.errors?.required">
+            La contraseña <strong>no puede</strong> tener <strong>espacios o caracteres vacios</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <mat-label>Dni</mat-label>
+        <input matInput #dniInput formControlName="dni" placeHolder="Introduzca su dni">
+        <mat-error *ngIf="dni.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-error *ngIf="dni.errors?.maxlength">Este campo tiene una longitud máxima <strong>{{dniInput.value.length}}
+                - 9</strong></mat-error>
+        <mat-error *ngIf="dni.errors?.isValidDni">Este dni <strong>no</strong> es <strong>válido</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" placeHolder="Introduzca su nombre">
+        <mat-error *ngIf="nombre.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="apellidos" placeHolder="Introduzca su apellidos">
+        <mat-error *ngIf="apellidos.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-error *ngIf="apellidos.errors?.isDoubleSurname">Tienes que introducir <strong>ambos apellidos</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-12">
+        <mat-label>Direccion</mat-label>
+        <input matInput formControlName="direccion" placeHolder="Introduzca su direccion">
+        <mat-error *ngIf="direccion.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <mat-label>Discapacidad</mat-label>
+        <input matInput type="number" formControlName="discapacidad" placeHolder="Introduzca su discapacidad">
+        <mat-error *ngIf="discapacidad.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="telefono" placeHolder="Introduzca su telefono">
+        <mat-error *ngIf="telefono.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-error *ngIf="telefono.errors?.validPhone">No tiene el formato deseado: <strong>"teléfono"</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <mat-label>NumeroHijos</mat-label>
+        <input matInput type="number" formControlName="numeroHijos" placeHolder="Introduzca su numeroHijos">
+        <mat-error *ngIf="numeroHijos.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-6">
+        <input type="text" placeHolder="Escoge tu estado" aria-label="Number" matInput formControlName="estadoId"
+            [matAutocomplete]="auto">
+        <mat-error *ngIf="opcionValida() && !estadoId.errors?.required">Opción no válida</mat-error>
+        <mat-error *ngIf="estadoId.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-optgroup *ngFor="let grupo of filteredOptions | async" [label]="grupo.grupo">
+                <mat-option *ngFor="let estado of grupo.estado" [value]="estado.estado" [disabled]="estado.disabled">
+                    <span [innerHtml]="estado.estadoHtml"></span>
+                </mat-option>
+            </mat-optgroup>
+
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput [max]="diaHoy" formControlName="fechaNacimiento" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+        <mat-error *ngIf="fechaNacimiento.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field><br>
+    <mat-checkbox formControlName="LGPD"></mat-checkbox> Acepto el tratamiento de datos
+    <div class="row col-md-12 d-flex justify-content-end">
+        <button mat-stroked-button class="mx-2" color="warn" (click)="cancelar()">Cancelar</button>
+        <button mat-stroked-button class="mx-2" color="primary" (click)="enviar()" [disabled]="errores()">Enviar
+            formulario</button>
+    </div>
+</form>

@@ -1,0 +1,46 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "all rights reserved",
+        "about-us": "We are a young company always looking for new and creative ideas to help you with our products in your everyday work"
+    },
+    "common-words": {
+        "about-us": "about us",
+        "all": "all",
+        "chat": "chat",
+        "configuration": "configuration",
+        "contact": "contact",
+        "contact-us": "contact us",
+        "downloads": "downloads",
+        "email": "email",
+        "features": "features",
+        "links": "links",
+        "our-clients": "our clients",
+        "phone": "phone",
+        "private": "private",
+        "welcome": "welcome",
+        "work-with-us": "work with us"
+    },
+    "job": {
+        "workers": "workers"
+    },
+    "local-objects": {
+        "products": "products",
+        "tables": "tables",
+        "tickets": "tickets"
+    },
+    "moments": {
+        "events": "events",
+        "promotions": "promotions"
+    },
+    "places": {
+        "bar": "bar",
+        "disco": "disco",
+        "restaurant": "restaurant",
+        "local": "local"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "Welcome to our platform Nighty Cloud",
+        "welcomeGirl": "Welcome to our platform Nighty Cloud"
+    }
+}

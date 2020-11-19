@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@post-tajamar/form-group": [
+        "libs/form-group/src/index.ts"
+      ],
+      "@post-tajamar/interfaces-sql": [
+        "libs/interfaces-sql/src/index.ts"
+      ],
+      "@post-tajamar/models": [
+        "libs/models/src/index.ts"
+      ]
+    }
+  },
+  "extends": "..\\..\\..\\apps\\api\\tsconfig.app.json"
+}

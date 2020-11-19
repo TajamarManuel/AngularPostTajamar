@@ -1,0 +1,115 @@
+<div class="container pt-3">
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeHolder="Introduzca la busqueda" #input />
+    </mat-form-field>
+    <div class="shadow">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+            <ng-container matColumnDef="Fecha">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.fecha }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="TrabajadorNombre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Trabajador</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.nombre }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="Sueldo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Sueldo</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.sueldo }}
+                </td>
+            </ng-container>
+
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                    <div class="example-element-detail d-flex justify-content-center" [@detailExpand]="
+                element == expandedElement ? 'expanded' : 'collapsed'
+              ">
+                        <mat-tab-group mat-stretch-tabs animationDuration="1000ms" class="w-100" color="accent">
+                            <mat-tab label="Persona">
+                                <post-tajamar-detalles-persona [persona]="element.Personas">
+                                </post-tajamar-detalles-persona>
+                            </mat-tab>
+                            <mat-tab label="Trabajador">
+                                <h1 class="display-h5">Trabajador: </h1>
+                                <strong class="mr-3"> Sueldo
+                                    base:</strong><span>{{ element.Trabajador.sueldoBase + "€"}}</span><br />
+                                <strong class="mr-3"> Fecha
+                                    entrada:</strong><span>{{ element.Trabajador.fechaEntrada | date: 'dd/MM/yyyy' }}</span><br />
+                                    <span
+                                    *ngIf="element.Trabajador.fechaSalida !== null && element.Trabajador.fechaSalida !== undefined">
+                                    <strong class="mr-3"> Fecha
+                                        salida:</strong><span>{{ element.Trabajador.fechaSalida | date: 'dd/MM/yyyy' }}</span><br />
+                                </span>
+                                <span
+                                    *ngIf="element.Trabajador.fechaBaja !== null && element.Trabajador.fechaBaja !== undefined">
+                                    <strong class="mr-3"> Fecha
+                                        baja:</strong><span>{{ element.Trabajador.fechaBaja }}</span><br />
+                                </span>
+                                <span
+                                    *ngIf="element.Trabajador.motivoDespido !== null && element.Trabajador.motivoDespido !== undefined">
+                                    <strong class="mr-3"> Motivo
+                                        despido:</strong><span>{{ element.Trabajador.motivoDespido }}</span><br />
+                                </span>
+                                <span
+                                    *ngIf="element.Trabajador.motivoBaja !== null && element.Trabajador.motivoBaja !== undefined">
+                                    <strong class="mr-3"> Motivo
+                                        baja:</strong><span>{{ element.Trabajador.motivoBaja }}</span><br />
+                                </span>
+                                <strong class="mr-3"> Oficina:</strong><span>{{ nombreOficina(element.Trabajador.oficinaId) }}</span>
+                            </mat-tab>
+                            <mat-tab label="Categorias">
+                                <div class="container">
+                                    <div class="transaction-table">
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr class="row d-flex-justify-content-center mt-1">
+                                                        <td class="col-md-3 text-center text-uppercase">Categoría</td>
+                                                        <td class="col-md-3 text-center text-uppercase">Sueldo</td>
+                                                        <td class="col-md-3 text-center text-uppercase">Tiempo</td>
+                                                        <td class="col-md-3 text-center text-uppercase">Porcentaje</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let categoria of element.categorias"
+                                                        class="row d-flex-justify-content-center">
+                                                        <td class="col-md-3 text-center font-weight-light">
+                                                            {{categoria.categoria.categoria}}</td>
+                                                        <td class="col-md-3 text-center font-weight-light">
+                                                            {{formatearPrimerSueldo(categoria.sueldo)}}</td>
+                                                        <td class="col-md-3 text-center font-weight-light">
+                                                            {{categoria.tiempo}} dias
+                                                        </td>
+                                                        <td class="col-md-3 text-center font-weight-light">
+                                                            {{formatearPorcentaje(categoria.porcentaje)}}%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngFor="let categoria of element.categorias">
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay" class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+        <div class="col-md-12 text-center" *ngIf="resultados === 0">
+            <p><em>Sin resultados</em></p>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>

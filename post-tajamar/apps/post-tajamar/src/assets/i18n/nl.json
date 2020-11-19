@@ -1,0 +1,46 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "alle rettigheter forbeholdt",
+        "about-us": "Vi er et ungt selskap som alltid leter etter nye og kreative ideer som kan hjelpe deg med våre produkter i ditt daglige arbeid"
+    },
+    "common-words": {
+        "about-us": "om oss",
+        "all": "der",
+        "chat": "chatte",
+        "configuration": "innstilling",
+        "contact": "kontakt",
+        "contact-us": "kontakt oss",
+        "downloads": "nedlastinger",
+        "email": "e-post",
+        "features": "egenskaper",
+        "links": "lenker",
+        "our-clients": "våre klienter",
+        "phone": "telefon",
+        "private": "privat",
+        "welcome": "start",
+        "work-with-us": "jobb med oss"
+    },
+    "job": {
+        "workers": "arbeidere"
+    },
+    "local-objects": {
+        "products": "produkter",
+        "tables": "tabeller",
+        "tickets": "billetter"
+    },
+    "moments": {
+        "events": "arrangementer",
+        "promotions": "kampanjer"
+    },
+    "places": {
+        "bar": "kroeg",
+        "disco": "discotheek",
+        "restaurant": "restaurant",
+        "local": "lokal"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "welkom op ons platform Nighty Cloud",
+        "welcomeGirl": "welkom op ons platform Nighty Cloud"
+    }
+}

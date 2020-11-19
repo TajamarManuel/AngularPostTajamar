@@ -1,0 +1,46 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "всички права запазени",
+        "about-us": "Ние сме млада компания, която винаги търси нови и креативни идеи, за да ви помогне с нашите продукти в ежедневната ви работа"
+    },
+    "common-words": {
+        "about-us": "за нас",
+        "all": "всеки",
+        "chat": "чат",
+        "configuration": "обстановка",
+        "contact": "контакт",
+        "contact-us": "Свържете се с нас",
+        "downloads": "изтегляния",
+        "email": "електронна поща",
+        "features": "xарактеристика",
+        "links": "звена",
+        "our-clients": "нашите клиенти",
+        "phone": "телефон",
+        "private": "частен",
+        "welcome": "начало",
+        "work-with-us": "работи с нас"
+    },
+    "job": {
+        "workers": "работници"
+    },
+    "local-objects": {
+        "products": "продукти",
+        "tables": "маси",
+        "tickets": "билети"
+    },
+    "moments": {
+        "events": "събития",
+        "promotions": "промоции"
+    },
+    "places": {
+        "bar": "кръчма",
+        "disco": "дискотека",
+        "restaurant": "ресторант",
+        "local": "местен"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "Добре дошли в нашата Nighty Cloud платформа",
+        "welcomeGirl": "Добре дошли в нашата Nighty Cloud платформа"
+    }
+}

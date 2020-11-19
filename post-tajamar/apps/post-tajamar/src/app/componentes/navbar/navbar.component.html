@@ -1,0 +1,77 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-light blue-grey lighten-5 navbar navbar-expand-lg" [containerInside]="false">
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><span class="navbar-brand">Tajamar</span></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+
+
+
+      <li class="nav-item active" routerLink="welcome">
+        <a class="nav-link waves-light" mdbWavesEffect>Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="nominas" mdbWavesEffect>Nóminas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="personas" mdbWavesEffect>Personas</a>
+      </li>
+
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <span class="caret">Trabajadores</span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" routerLink="trabajadores" mdbWavesEffect>Ver trabajadores</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.crearTrabajador()">Crear trabajador</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" routerLink="categorias" mdbWavesEffect>Ver categorias</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.crearCategoria()">Crear categorias</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" routerLink="oficinas" mdbWavesEffect>Ver oficinas</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.crearOficina()">Crear oficinas</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" routerLink="verTodo" mdbWavesEffect>Ver todo</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" routerLink="historicoCategorias" mdbWavesEffect>Ver historico categorias</a>
+        </div>
+      </li>
+      <!-- Dropdown -->
+
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <button mat-button color="primary" *ngIf="!loginService.isLogged" (click)="login()">Login</button>
+        <button mat-button color="accent" *ngIf="!loginService.isLogged" (click)="register()">Register</button>
+      </li>
+      <li class="nav-item dropdown" dropdown *ngIf="loginService.isLogged">
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <i class="fas fa-user"></i><span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect>Nóminas</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="fichaTrabajador()">Ver mi ficha de trabajador</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="verCuenta()">Ver mi cuenta</a>
+          <a class="dropdown-item waves-light" routerLink="administracion" mdbWavesEffect>Administracion</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Desconectarse</a>
+        </div>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->

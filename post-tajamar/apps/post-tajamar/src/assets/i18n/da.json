@@ -1,0 +1,46 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "",
+        "about-us": ""
+    },
+    "common-words": {
+        "about-us": "",
+        "all": "alle sammen",
+        "chat": "snak",
+        "configuration": "indstilling",
+        "contact": "",
+        "contact-us": "kontakt os",
+        "downloads": "",
+        "email": "",
+        "features": "",
+        "links": "",
+        "our-clients": "",
+        "phone": "",
+        "private": "privat",
+        "welcome": "start",
+        "work-with-us": ""
+    },
+    "job": {
+        "workers": "arbejdere"
+    },
+    "local-objects": {
+        "products": "produkter",
+        "tables": "tabeller",
+        "tickets": "billetter"
+    },
+    "moments": {
+        "events": "begivenheder",
+        "promotions": "kampagner"
+    },
+    "places": {
+        "bar": "pub",
+        "disco": "diskotek",
+        "restaurant": "restaurant",
+        "local": "lokal"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "velkommen til vores platform Nighty Cloud",
+        "welcomeGirl": "velkommen til vores platform Nighty Cloud"
+    }
+}

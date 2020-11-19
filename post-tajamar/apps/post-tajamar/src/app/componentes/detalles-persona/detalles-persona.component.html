@@ -1,0 +1,11 @@
+<h1 class="display-h5">Persona: </h1>
+<strong>Nombre: </strong><span>{{persona.nombre}}</span><br>
+<strong>Apellidos: </strong><span>{{persona.apellidos}}</span><br>
+<strong>Dni: </strong><span>{{persona.dni}}</span><br>
+<strong>Direccion: </strong><span>{{persona.direccion}}</span><br>
+<strong>Discapacidad: </strong><span>{{persona.discapacidad}}%</span><br>
+<strong>Email: </strong><span>{{persona.email}}</span><br>
+<strong>Teléfono: </strong><span>{{persona.telefono}}</span><br>
+<strong>Numero hijos: </strong><span>{{persona.numeroHijos + persona.numeroHijos === 1 ? 'hijo' : 'hijos'}}</span><br>
+<strong>Estado: </strong><span>{{estado}}</span><br>
+<strong>Fecha nacimiento: </strong><span>{{persona.fechaNacimiento | date: 'dd/MM/yyyy'}}</span><br>

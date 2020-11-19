@@ -1,0 +1,26 @@
+<h1 class="display-h5">Iniciar Sesión</h1>
+<form [formGroup]="this.loginFormulario">
+    <mat-form-field appearance="outline" class="col-12">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="correo" placeHolder="Introduzca su correo">
+        <mat-error *ngIf="correo.errors?.required">Este campo es obligatorio</mat-error>
+        <mat-error *ngIf="correo.errors?.email">No tiene el formato necesario</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-12">
+        <mat-label>Introduzca su contraseña</mat-label>
+        <input matInput formControlName="contrasena" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="contrasena.errors?.required">Este campo es obligatorio</mat-error>
+    </mat-form-field>
+    <div class="row d-flex justify-content-end col-12">
+        <button mat-raised-button class="col-4 mx-2" color="warn" (click)="close()">
+            Cancelar
+        </button>
+        <button mat-raised-button class="col-4 mx-2" color="primary" (click)="tryLogin()" [disabled]="!this.loginFormulario.valid">
+            Iniciar sesión
+        </button>
+    </div>
+</form>

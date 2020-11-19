@@ -1,0 +1,25 @@
+<form [formGroup]="this.crearCategoriaFormulario">
+    
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="categoria" placeHolder="Introduzca el nombre de la categoría ">
+        <mat-error *ngIf="categoria.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Incremento Salarial</mat-label>
+        <input matInput type="number" formControlName="incrementoSalarial" placeHolder="Introduzca el incremento salarial ">
+        <mat-error *ngIf="incrementoSalarial.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="col-md-12">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" placeHolder="Introduzca una descripcion">
+        <mat-error *ngIf="descripcion.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+
+    <div class="col-12 d-flex justify-content-end">
+        <button mat-stroked-button color="warn" class="col-4 mx-2"(click)="cerrarDialog()">Cancelar</button>
+        <button mat-stroked-button color="primary" class="col-4 mx-2"(click)="crearCategoria()" [disabled]="this.validarFormulario()">{{ this.data !== undefined && this.data !== null ? this.data.categoria !== null && this.data.categoria !== undefined ? 'Actualizar categoría' : 'Crear categoría' : 'Crear categoría' }}</button>
+    </div>
+</form>

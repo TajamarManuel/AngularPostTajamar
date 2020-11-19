@@ -1,0 +1,74 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "todos los derechos reservados",
+        "about-us": "somos una empresa joven que siempre busca ideas nuevas y creativas que le ayuden con nuestros productos en su trabajo diario",
+        "features": "estas son las características que han hecho nuestra plataforma completa y eficaz",
+        "happy-clients": "clientes utilizando nuestra plataforma actualmente",
+        "happy-enterprises": "empresas usando nuestro servicio de forma habitual",
+        "portfolio": "descubre las imagenes que destacan nuestros clientes",
+        "pricing": "ofertas de nuestras características únicas , convierteté en premium y obtén mas ofertas inéditas",
+        "recognition-of-enterprises": "reconocimientos públicos",
+        "second-about-us": "nuestras ideas son originales, intentando utilizar los últimos medios y hacer nuestras ideas lo mas fáciles posibles para el usuario",
+        "slogan": "la red social del mundo de la noche",
+        "sub-slogan": "Convierteté en Nighter y redescubre la nueva forma de salir de fiesta",
+        "team": "el equipo que ha conseguido llevar este proyecto hasta el final",
+        "time-online": "tiempo desde nuestro primer servicio",
+        "testimonials": "descubre las opiniones de nuestros clientes y empresas"
+    },
+    "common-words": {
+        "about-us": "sobre nosotros",
+        "all": "todos",
+        "chat": "chat",
+        "configuration": "configuración",
+        "contact": "contacto",
+        "contact-us": "contacta con nosotros",
+        "downloads": "descargas",
+        "email": "correo electrónico",
+        "features": "características",
+        "frecuently-questions": "preguntas frecuentes",
+        "full": "completo",
+        "get-started": "comienza",
+        "innovative": "innovador",
+        "learn-more": "conocer mas",
+        "links": "enlaces",
+        "multi-platform": "multiplataforma",
+        "our-clients": "nuestros clientes",
+        "phone": "teléfono",
+        "pricing": "ofertas",
+        "private": "privado",
+        "services": "servicios",
+        "our-team": "nuestro equipo",
+        "testimonials": "opiniones",
+        "universal": "universal",
+        "welcome": "inicio",
+        "work-with-us": "trabaja con nosotros"
+    },
+    "job": {
+        "workers": "trabajadores"
+    },
+    "local-objects": {
+        "products": "productos",
+        "tables": "mesas",
+        "tickets": "tickets"
+    },
+    "moments": {
+        "events": "eventos",
+        "promotions": "promociones"
+    },
+    "places": {
+        "bar": "bar",
+        "disco": "discoteca",
+        "restaurant": "restaurante",
+        "local": "locales"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "Bienvenido a nuestra plataforma Nighty Cloud",
+        "welcomeGirl": "Bienvenida a nuestra plataforma Nighty Cloud"
+    },
+    "user": {
+        "login": "iniciar sesión",
+        "register": "crear una cuenta",
+        "logout": "cerrar sesión"
+    }
+}

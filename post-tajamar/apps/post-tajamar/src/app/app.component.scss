@@ -1,0 +1,14 @@
+.card {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+}
+.custom-width {
+  // margin-left: 465px !important;
+
+  @media (min-width: 768px) {
+    width: 1000px;
+  }
+
+  // width: calc(100vw - 485px) !important;
+  min-width: 50% !important;
+  z-index: 0 !important;
+}

@@ -1,0 +1,9 @@
+<post-tajamar-navbar></post-tajamar-navbar>
+
+<div class="wrapper min-vh-100" (click)="quitarTight()" id="tighting">
+    <div class="wrap">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<post-tajamar-footer (mouseenter)="_insideFooter = true" (mouseleave)="_insideFooter = false" *ngIf="mostrarBarra()"></post-tajamar-footer>

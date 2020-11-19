@@ -1,0 +1,46 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "tots els drets reservats",
+        "about-us": "Som una empresa jove que sempre busca idees noves i creatives per ajudar-vos amb els nostres productes en el vostre treball diari"
+    },
+    "common-words": {
+        "about-us": "sobre nosaltres",
+        "all": "tots",
+        "chat": "xat",
+        "configuration": "configuració",
+        "contact": "contacte",
+        "contact-us": "contacta amb nosaltres",
+        "downloads": "descàrregues",
+        "email": "correu electrònic",
+        "features": "característiques",
+        "links": "enllaços",
+        "our-clients": "els nostres clients",
+        "phone": "telèfon",
+        "private": "privat",
+        "welcome": "inici",
+        "work-with-us": "treballa amb nosaltres"
+    },
+    "job": {
+        "workers": "treballadors"
+    },
+    "local-objects": {
+        "products": "productes",
+        "tables": "taules",
+        "tickets": "tiquets"
+    },
+    "moments": {
+        "events": "esdeveniments",
+        "promotions": "promocions"
+    },
+    "places": {
+        "bar": "bar",
+        "disco": "discoteca",
+        "restaurant": "restaurant",
+        "local": "locals"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "benvingut a la nostra plataforma Nighty Cloud",
+        "welcomeGirl": "benvinguda a la nostra plataforma Nighty Cloud"
+    }
+}

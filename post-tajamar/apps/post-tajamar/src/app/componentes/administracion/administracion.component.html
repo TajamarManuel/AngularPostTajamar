@@ -1,0 +1,57 @@
+<div class="container pt-3">
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeHolder="Introduzca la busqueda" #input />
+    </mat-form-field>
+    <div class="shadow">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+            <ng-container matColumnDef="accion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Accion</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.accion.toLocaleLowerCase() }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="fecha">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.fecha | date:"dd/MM/yyyy - hh:mm:ss"}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="trabajador">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Trabajador</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.trabajadorId }}
+                </td>
+            </ng-container>
+
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                    <div class="example-element-detail d-flex justify-content-center"
+                        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div class="my-4 text-left row ">
+                            <div class="col-md-6 d-flex align-items-center">
+                                <h1 class="display-h5">
+                                    Cambios
+                                </h1>
+                            </div>
+                            <div class="col-md-6 d-flex align-items-center">
+                                <span [innerHtml]="element.cambios"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay" class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+        <div class="col-md-12 text-center" *ngIf="resultados === 0">
+            <p><em>Sin resultados</em></p>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{
+    "common-phrases": {
+        "all-rights-reserved": "版權所有",
+        "about-us": "我們是一家年輕的公司，一直在尋找新的創意，以幫助您在日常工作中使用我們的產品"
+    },
+    "common-words": {
+        "about-us": "關於我們",
+        "all": "大家",
+        "chat": "聊天室",
+        "configuration": "設置",
+        "contact": "聯繫",
+        "contact-us": "聯繫我們",
+        "downloads": "資料下載",
+        "email": "電子郵件",
+        "features": "特徵",
+        "links": "鏈接",
+        "our-clients": "我們的客戶",
+        "phone": "電話",
+        "private": "設置",
+        "welcome": "開始",
+        "work-with-us": "跟我們工作"
+    },
+    "job": {
+        "workers": "工人"
+    },
+    "local-objects": {
+        "products": "產品展示",
+        "tables": "桌子",
+        "tickets": "車票"
+    },
+    "moments": {
+        "events": "大事記",
+        "promotions": "促銷活動"
+    },
+    "places": {
+        "bar": "酒館",
+        "disco": "迪斯科舞廳",
+        "restaurant": "餐廳",
+        "local": "本地"
+    },
+    "site": {
+        "name": "Nighty Cloud",
+        "welcome": "歡迎來到我們的平台Nighty Cloud",
+        "welcomeGirl": "歡迎來到我們的Nighty Cloud平台"
+    }
+}

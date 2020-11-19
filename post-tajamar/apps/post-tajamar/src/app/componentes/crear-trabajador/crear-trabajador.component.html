@@ -1,0 +1,58 @@
+<form [formGroup]="this.crearTrabajadorFormulario">
+    <mat-form-field appearance="outline" class="col-md-4">
+        <input type="text" placeHolder="Escoge la categoría" aria-label="Number" matInput formControlName="categoriaTrabajador"
+            [matAutocomplete]="categorias">
+        <mat-error *ngIf="opcionValidaCategorias() && !categoriaTrabajador.errors?.required">Opción no válida</mat-error>
+        <mat-error *ngIf="categoriaTrabajador.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-autocomplete #categorias="matAutocomplete">
+            <mat-optgroup *ngFor="let grupo of filteredOptionsCategorias | async" [label]="grupo.grupo">
+                <mat-option *ngFor="let categoria of grupo.categoria" [value]="categoria.categoria">
+                    <span [innerHtml]="categoria.categoriaHtml"></span>
+                </mat-option>
+            </mat-optgroup>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <input type="text" placeHolder="Escoge la oficina" aria-label="Number" matInput formControlName="oficina"
+            [matAutocomplete]="oficinas">
+        <mat-error *ngIf="opcionValidaOficinas() && !oficina.errors?.required">Opción no válida</mat-error>
+        <mat-error *ngIf="oficina.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-autocomplete #oficinas="matAutocomplete">
+            <mat-optgroup *ngFor="let grupo of filteredOptionsOficinas | async" [label]="grupo.grupo">
+                <mat-option *ngFor="let oficina of grupo.oficina" [value]="oficina.oficina">
+                    <span [innerHtml]="oficina.oficinaHtml"></span>
+                </mat-option>
+            </mat-optgroup>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+        <input type="text" placeHolder="Escoge la persona" aria-label="Number" matInput formControlName="persona"
+            [matAutocomplete]="personas">
+        <mat-error *ngIf="opcionValidaPersonas() && !persona.errors?.required">Opción no válida</mat-error>
+        <mat-error *ngIf="persona.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+        <mat-autocomplete #personas="matAutocomplete">
+            <mat-optgroup *ngFor="let grupo of filteredOptionsPersonas | async" [label]="grupo.grupo">
+                <mat-option *ngFor="let persona of grupo.persona" [value]="persona.persona">
+                    <span [innerHtml]="persona.personaHtml"></span>
+                </mat-option>
+            </mat-optgroup>
+        </mat-autocomplete>
+    </mat-form-field>    
+    
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Fecha de entrada</mat-label>
+        <input matInput [max]="diaHoy" formControlName="fechaEntrada" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="fechaEntrada.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Sueldo base</mat-label>
+        <input matInput formControlName="sueldoBase" placeHolder="Introduzca el sueldo Base ">
+        <mat-error *ngIf="sueldoBase.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    <div class="col-12 d-flex justify-content-end">
+        <button mat-stroked-button color="warn" class="col-4 mx-2"(click)="cerrarDialog()">Cancelar</button>
+        <button mat-stroked-button color="primary" class="col-4 mx-2"(click)="crearTrabajador()" [disabled]="this.validarFormulario()">{{ this.data !== undefined && this.data !== null ? this.data.trabajador !== null && this.data.trabajador !== undefined ? 'Actualizar trabajador' : 'Crear trabajador' : 'Crear trabajador' }}</button>
+    </div>
+</form>

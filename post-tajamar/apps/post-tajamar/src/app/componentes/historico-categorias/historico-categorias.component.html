@@ -1,0 +1,46 @@
+<div class="container pt-3">
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeHolder="Introduzca la busqueda" #input>
+    </mat-form-field>
+    <div class="shadow">
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+            <ng-container matColumnDef="FechaEntrada">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de entrada </th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.fechaEntrada | date:"dd/MM/yyyy"}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="FechaSalida">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha salida </th>
+                <td mat-cell *matCellDef="let element">
+                    {{(element.fechaSalida | date:"dd/MM/yyyy") ||"Hoy"}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="Categoria">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.categoria}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="Incremento">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Incremento salarial </th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.incremento}} %
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="Trabajador">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Trabajador </th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.trabajador}}
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"> </tr>
+        </table>
+        <div class="col-md-12 text-center" *ngIf="resultados === 0">
+            <p> <em>Sin resultados</em> </p>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>

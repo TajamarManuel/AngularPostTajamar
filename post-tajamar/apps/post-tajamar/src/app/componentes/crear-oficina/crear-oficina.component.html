@@ -1,0 +1,25 @@
+<form [formGroup]="this.crearOficinaFormulario">
+    
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Oficina</mat-label>
+        <input matInput formControlName="oficina" placeHolder="Introduzca el nombre de la oficina ">
+        <mat-error *ngIf="oficina.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="col-md-6">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion" placeHolder="Introduzca la direccion de la oficina ">
+        <mat-error *ngIf="direccion.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="col-md-12">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" placeHolder="Introduzca una descripcion">
+        <mat-error *ngIf="descripcion.errors?.required">Este campo es <strong>obligatorio</strong></mat-error>
+    </mat-form-field>
+
+    <div class="col-12 d-flex justify-content-end">
+        <button mat-stroked-button color="warn" class="col-4 mx-2"(click)="cerrarDialog()">Cancelar</button>
+        <button mat-stroked-button color="primary" class="col-4 mx-2"(click)="crearOficina()" [disabled]="this.validarFormulario()">{{ this.data !== undefined && this.data !== null ? this.data.oficina !== null && this.data.oficina !== undefined ? 'Actualizar oficina' : 'Crear oficina' : 'Crear oficina' }}</button>
+    </div>
+</form>
